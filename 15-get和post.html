@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+    </body>
+    <script src="./js/jquery-3.7.0.js"></script>
+    <script>
+        // get 其实就是简便版，一般就是有参有返
+        $.get("data/tags.json", {}, function (data) {
+            console.log(data);
+        })
+        // post同理，但是这个是给服务器用的，本地服务器会报错滴
+        // getJson，基本上也是一摸一样的，但是要求了只能是JSON格式的字符串
+        $.getJSON("data/tags.json", {}, function (data) {
+            console.log(data);
+        })
+    </script>
+
+</html>

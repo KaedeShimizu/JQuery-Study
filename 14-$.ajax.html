@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+    </body>
+    <!-- 直接上js代码吧，这里不多说~ -->
+    <script src="./js/jquery-3.7.0.js"></script>
+    <script>
+        // 都是封装好的，所以还是需要使用源文件滴
+        // 这里使用我自己的tags数据
+        // 怎么使用呢？首先是引入JQuery，然后就可以写了：
+        $.ajax({
+            type: "get", //请求方式
+            url: "data/tags.json", //请求地址
+            // 请求数据，是一个json数据对象
+            data: {
+                // 如果没有参数，那么就不需要设置啦~
+            },
+            // 预期返回的数据类型格式，接收到返回值的时候，会自动封装为一个json对象的
+            dataType: "json",
+            success: function (data) {
+                // 成功的回调，返回的内容会作为参数传入
+                // 就可以看到返回的内容啦~如果这是一个字符串，请需要转换一下 JSON.parse(data)
+                console.log(data);
+                // 可以显示到页面上面
+                var ul = $("<ul></ul>");
+                // 遍历返回的数据
+                for (let key in data) {
+                    var li = $("<li>" + key + "</li>")
+                    // 把li设置到ul中
+                    ul.append(li);
+                }
+                // 渲染到页面当中去
+                $("body").append(ul);
+            }
+        })
+    </script>
+
+</html>

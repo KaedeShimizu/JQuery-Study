@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>选择器</title>
+</head>
+
+<body>
+	<div id="mydiv1">Div1<span>span中的内容</span></div>
+	<div id="mydiv2">Div2</div>
+	<span class="blue">blue class</span>
+</body>
+<!-- 和js一样，有很多选择器，基础选择器更是常见
+	 这个选择器和CSS的规范是类似的，都是通过#之类的东西
+	 只是需要使用$进行包裹
+	 -->
+<!--
+		ID选择器 #来决定的 $("#id") 返回对象 如果有多个同名ID 返回第一个
+		类选择器 .class决定 $(".class") 同理
+		元素选择器 标签名、元素名 $("div") 所有指定标签的元素
+		通用选择器 * $("*") 页面中所有的元素对象
+		组合选择器 选择器1，选择器2... $("选择器1，选择器2") 选择指定的选择器的元素对象
+	-->
+<script src="./js/jquery-3.7.0.js"></script>
+<script>
+	// ID选择器
+	var myDiv = $("#mydiv1");
+	console.log(myDiv);
+
+	// 类选择器
+	var clas = $(".blue")
+	console.log(clas)
+
+	// 元素选择器
+	// 选择所有的span
+	var spans = $("span")
+	console.log(spans)
+
+	// 通用选择器
+	var all = $("*")
+	console.log(all)
+
+	// 组合选择器
+	// 如果出现重复的元素，那么按照顺序，不会取第二个
+	var group = $("#mydiv1, div, .blue")
+	console.log(group)
+</script>
+
+</html>

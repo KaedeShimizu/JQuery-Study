@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <p>文本</p>
+    </body>
+    <script src="./js/jquery-3.7.0.js"></script>
+    <script>
+        // ready其实就是预加载时间，当页面的DOM结构加载完了就执行
+        // 类似于js中的load事件
+        // ready事件可以写多个，谁先写先执行谁
+        // 下面是调用的方法：
+        $(function () {
+            console.log("页面DOM加载完成！");
+            console.log($("p"));
+        });
+    </script>
+
+</html>

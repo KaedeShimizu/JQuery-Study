@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+
+	<body>
+		<div id="MyDiv">My Div</div>
+	</body>
+	<!--
+    DOM对象
+    其实就是通过js获取到的对象
+    JQ对象
+    就是通过JQ获取到的元素对象了，返回的是一个包装集
+-->
+	<!-- 引入核心文件 不引入会报错的 -->
+	<script src="./js/jquery-3.7.0.js"></script>
+	<script type="text/javascript">
+		// DOM对象
+		// 通过JS获取
+		var divDOM = document.getElementById("MyDiv");
+		console.log(divDOM);
+
+		// 对应的，可以试一试JQ对象
+		// 通过ID选择器获取元素对象，直接用$符号就可以了
+		var divJQ = $("#MyDiv");
+		console.log(divJQ)
+		// 如果获取不存在的元素呢？可以看到返回的是一个null
+		console.log(document.getElementById("不存在的ID"))
+		// JQ返回的就是另外一个东西了，你可以看到，是一个集合，一个包装集合
+		console.log($("#不存在的ID"))
+
+		// 转换也是非常简单的，直接通过Doller符号转换就行
+		var newDiv = $(divDOM)
+		console.log(newDiv)
+
+		// 如果需要JQ转DOM，有两种方法
+		// 最常见的就是获取对象包装集中指定下标的对象
+		var divJQ2DOM = divJQ[0];
+		// 就可以发现，这个已经是一个DOM对象啦~
+		console.log(divJQ2DOM)
+	</script>
+</html>

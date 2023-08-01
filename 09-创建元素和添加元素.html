@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <h1 id="root">ROOT</h1>
+    </body>
+    <script src="./js/jquery-3.7.0.js"></script>
+    <script>
+        // 创建元素非常的简单，直接用$(HTML内容)就可以啦
+        var p = $("<p>Hello World</p>");
+        // 添加元素，分为几种 一种是前追加子元素，一种是后追加子元素，还有一种就是前追加同级元素，最后就是后追加同级元素
+        // 前追加 在指定元素内部的最前面追加内容，内容可以是字符串，HTML元素或者JQ对象
+        $("#root").prepend("Hello World");
+        // 另一种写法
+        p.prependTo($("#root"))
+
+        // 后追加
+        $("#root").append("<span>SPAN</span>")
+        $("<p>啊吧啊吧</p>").appendTo($("#root"))
+
+        // 如果追加的是已有的元素，那么会把原来的元素直接移动到指定的位置，原来的位置就没了~
+
+        // 同级追加，用法差不多其实
+        $("#root").before("<p>前追加的内容</p>")
+        $("#root").after("<p>后追加的内容</p>")
+
+        // 规则一样，如果元素存在，剪切原来的元素；不存在则创建一个新的元素
+    </script>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <h3><span>html()和text()方法</span></h3>
+        <div id="html">DIV</div>
+        <div id="html2">DIV</div>
+        <div id="text">TEXT</div>
+        <div id="text2">TEXT</div>
+        <input type="text" value="OOP" id="op">
+    </body>
+    <!-- 终于开始操作DOM了！ -->
+    <!-- 直接上代码吧，有啥特殊的我单独写注释就好 -->
+    <!-- 
+        html() 获取元素内容，包含标签
+        text() 获取纯文本内容 不包含标签
+        val() 获取表单元素的值
+        上面三种如果中间加参数，就是设置对应的元素的内容啦
+     -->
+    <script src="./js/jquery-3.7.0.js"></script>
+    <script>
+        $("#html").html("<h2>这是新的标签值</h2>")
+        $("#html2").html("这是新的标签值")
+        // 注意，这里如果不写标签，看起来没啥，实际上没有的就是单独的字符串了
+        console.log($("#html"), $("#html2"));
+
+        $("#text").text("这是新的text内容")
+        // 这个时候如果你需要标签效果，text只会认为是一个标签罢了
+        $("#text2").text("<h1>这是新的text内容</h1>")
+        // 取值和写入的内容一样，但是不包含标签（设置时候就存在的标签）
+
+        // 可以获取文本框的内容
+        console.log($("#op").val());
+        // 进行修改
+        $("#op").val("今天天气不错~");
+    </script>
+
+</html>

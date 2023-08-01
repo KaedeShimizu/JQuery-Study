@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+        * {
+            padding: 8px;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .larger {
+            font-size: 30px;
+        }
+
+        .green {
+            background-color: green;
+        }
+    </style>
+
+    <body>
+        <h1 class="blue">Hello World</h1>
+        <h2 class="larger">This is h2</h2>
+        <h3 class="green">This is h3</h3>
+    </body>
+    <script src="./js/jquery-3.7.0.js"></script>
+    <script>
+        // 其实还是attr这个东西，如果里面的是class，那获取的就是样式咯
+        // 和上节课一样，attr也可以同时设置这个样式
+        // addClass的话就是顾名思义，添加一个样式啦
+        // css()这个函数就是添加一个具体的样式
+        // removeClass()，移除样式，参数也是样式名称
+
+        // 我现在要获取h1的样式名
+        var h1_name = $("h1").attr("class");
+        console.log(h1_name);
+
+        // 我要设置这个样式 attr的话原本的样式会被覆盖掉
+        $("h1").attr("class", "green")
+
+        // 添加样式 原来的样式就不会被覆盖掉了~
+        // 但是呢，如果是同样的样式，那么会在原来样式的基础上添加，如果相同的话，以样式中后定义的为准
+        // 不是覆盖！
+        $("h3").addClass("larger")
+
+        // css，这个优先级很高，可以设置单个样式
+        // 也可以写入一个字典，这样就可以设置多个样式了~
+        $('h1').css("font-size", "40px");
+        $("h2").css({ "font-family": "楷体", "color": "red" })
+
+        // 如果我不想要样式了，可以移除掉
+        $("h1").removeClass("green")
+    </script>
+
+</html>

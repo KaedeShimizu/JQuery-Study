@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>表单选择器</title>
+    </head>
+
+    <body>
+        <!-- 随便给一个表单出来 -->
+        <form action="" method="post">
+            <input type="button" value="按钮">
+            <input type="checkbox" name="" id="">篮球
+            输入框<input type="text">
+            <select name="" id="">
+                <option value="0">啊吧啊吧</option>
+                <option value="1">上海</option>
+                <option value="2">北京</option>
+            </select>
+            简介<textarea name="" id="" cols="30" rows="10"></textarea>
+            密码<input type="password">
+        </form>
+    </body>
+    <!-- 直接上代码吧，反正表单就是那些东西 -->
+    <script src="./js/jquery-3.7.0.js"></script>
+    <script>
+        // 我想要选择所有的表单
+        var inputs = $(":input");
+        console.log(inputs);
+
+        // 但是注意这个，这是一个元素选择器，只和标签有关
+        var inputs2 = $("input");
+        console.log(inputs2);
+
+        // 文本框选择器
+        var text = $(":text");
+
+        // 密码选择器
+        var pws = $(":password");
+        console.log(text, pws);
+
+        // 反正其实就是冒号加上type类型，自动就可以找到了JQ没有提供name选择器，所以需要用到这个
+    </script>
+
+</html>

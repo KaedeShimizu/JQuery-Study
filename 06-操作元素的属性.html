@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <form action="">
+            <input type="checkbox" kaede="KSA!" name="1" id="a" checked>1
+            <input type="checkbox" name="2" id="b">2
+        </form>
+    </body>
+    <script src="./js/jquery-3.7.0.js"></script>
+    <script>
+        // 分三个部分来走吧~
+        // 获取属性 设置属性 移除属性
+        // 获取属性，我现在想要获取name属性
+        // 使用attr就可以啦
+        // 这里name是一个固有属性 所以attr和prop都是可以获取的
+        var name = $("#a").attr("name");
+        console.log(name);
+        var name2 = $("#b").prop("name");
+        console.log(name2);
+
+        // 对于设置了属性的，你可以看到如下样子：
+        var ck1 = $("#a").attr("checked"); //checked
+        var ck2 = $("#a").prop("checked"); //true
+        console.log(ck1, ck2);
+
+        // 如果是没有设置这个熟悉的画，那么attr返回的就是undefined
+        var ck1 = $("#b").attr("checked"); //undefine
+        var ck2 = $("#b").prop("checked"); //false
+        console.log(ck1, ck2);
+
+        // 对于自定义属性，就是本来不存在的属性
+        var k1 = $("#a").attr("kaede")//KSA！
+        var k2 = $("#a").prop("kaede")//undefine
+        console.log(k1, k2);
+
+        /* 总结
+        如果是固有属性，比如name，那么attr和prop方法都可以获取
+        如果是自定义属性，那么attr可以获取，但是prop就不能获取了
+        如果是返回值为bool类型的属性，如果设置了属性，atter返回具体的值，prop返回true
+        如果没有设置这个属性，那么attr返回undefine prop返回false
+        */
+
+        // 设置属性
+        // 直接用固有属性举例子吧
+        $("#a").attr("value", 1);
+        $("#b").prop("value", 2);
+        console.log($("#a"), $("#b"));
+
+        // 如果要设置布尔类型的属性呢？
+        $("#b").attr("checked", "checked")
+        // 不想要，可以用prop直接改为false
+        $("#a").prop("checked", false)
+
+        // 自定义属性
+        // 我用的最新版JQ貌似没出现问题，但是不建议使用prop好吧，理论上prop是不能操作自定义属性的
+        $("#a").attr("aaa", "?")
+        $("#b").prop("bbb", "AAA")
+
+        // 移除属性
+        // 我可以移除checked
+        $("#b").removeAttr("checked")
+
+        /* 总结
+        如果属性类型是bool，那么使用prop
+        否则使用Attr就好
+        */
+    </script>
+
+</html>

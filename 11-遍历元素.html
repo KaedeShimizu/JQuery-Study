@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <span style="background-color:green; padding: 5px;color: white;">Japanese</span>
+        <span style="background-color:green; padding: 5px;color: white;">China</span>
+        <span style="background-color:green; padding: 5px;color: white;">America</span>
+        <span style="background-color:green; padding: 5px;color: white;">France</span>
+        <span style="background-color:green; padding: 5px;color: white;">???</span>
+    </body>
+    <script src="./js/jquery-3.7.0.js"></script>
+    <script>
+        // 注意 只有JQ对象可以使用
+        // 获取指定元素并遍历，比方说我这里要遍历所有的span
+        // 默认就是两个参数，一个下标一个元素，元素就是访问的元素罢了
+        $("span").each(function (index, element) {
+            console.log(index, element, this)
+        })
+    </script>
+
+</html>

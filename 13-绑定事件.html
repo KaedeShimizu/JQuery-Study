@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <button id="btn">这是一个简单的按钮啦~</button>
+        <button id="btn2">另外一个普通的按钮</button>
+        <button id="btn3">多个事件的按钮</button>
+    </body>
+    <script src="./js/jquery-3.7.0.js"></script>
+    <script>
+        // 使用bind进行事件的绑定，有三个参数，一般只需要两个参数
+        // 分别是绑定的是什么事件，以及需要做什么
+        // 绑定单个事件：$(元素).bind(事件类型, function(){})
+        // 或者直接绑定：$(元素).事件(function(){})
+        $("#btn").bind("click", function () {
+            alert("点击了按钮~")
+            console.log(this);
+        })
+        // 原生差不多，这里不多说了~
+        $("#btn2").click(function () {
+            alert("点击了按钮2！")
+            console.log(this);
+        })
+        // 两种调用方法中的this都是按钮本身
+
+        // 绑定多个事件！
+        // 也是使用bind绑定，如果是多个事件一个函数，那就是
+        // x.bind("type type type...", fun())
+        // 多个事件给不同函数，就是连续的点就好，相当于多次进行绑定；
+        // 或者用字典来绑定事件，这样子比上面的好看一些
+        $("#btn3").bind({
+            "click": function () {
+                console.log("点击了3号");
+            }
+        })
+        // 还有最简单的，就是直接绑定，其实也是可以直接点的和上面差不多
+        $("#btn3").click(function () { console.log("点击按钮3"); }).mouseout(function () { console.log("鼠标移开了"); })
+    </script>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <div id="parent">
+            <div id="child" class="testColor">
+                <div class="gray">Gray</div>
+                <div class="red">Red</div>
+                <div class="blue">blue</div>
+            </div>
+            <div>其他</div>
+        </div>
+    </body>
+    <!-- 层次选择器
+    后代选择器 格式就是父元素 空格 子元素，和css是一样的方法，用空格隔开就好了
+    这个是选择父元素的所有满足条件的元素，包含多层嵌套
+
+    子代选择器 大差不差，但是这个是通过大于号隔开的
+    选择父元素的所有第一代指定元素，不会多层嵌套，只检查一代
+
+    相邻选择器
+    格式类似，但是是使用加号隔开的，而且只会找一个元素
+    如果元素不存在，获取不到
+
+    同辈选择器
+    使用波浪线进行链接 查找元素下面的所有指定元素
+    -->
+    <script src="./js/jquery-3.7.0.js"></script>
+    <script>
+        // 后代选择器
+        var hd = $("#parent div");
+        console.log(hd)
+
+        // 子代选择器
+        var zd = $("#parent > div");
+        console.log(zd)
+
+        // 相邻选择器
+        var xl = $("#child + div");
+        console.log(xl);
+        // 如果这里挨着的不是一个div，那么就是找不到哩~
+
+        // 同辈选择器
+        // 直接找到同级的某种选择器
+        var tb = $(".gray ~ div")
+        console.log(tb);
+    </script>
+
+</html>

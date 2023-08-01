@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <div id="a1">
+            <h1>a1</h1>
+        </div>
+        <div id="a2">
+            <h1>a2</h1>
+        </div>
+    </body>
+    <script src="./js/jquery-3.7.0.js"></script>
+    <script>
+        // remove 删除元素以及对应的子元素 指定元素.remove() 没了
+        // empty 清空标签元素的内容，保留一个最外面的标签，指定元素.empty()
+        $("#a1").remove()
+        $("#a2").empty()
+    </script>
+
+</html>
